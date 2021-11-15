@@ -159,14 +159,9 @@ describe('Basic user flow for Website', () => {
 
     // Grab window from frontend
     const localStorage = await page.evaluate(() =>  Object.assign({}, window.localStorage));
-    let correctCart = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+    let correctCart = '[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]';
     let cart = localStorage['cart'];
-    cart = cart.substring(1, cart.length-1);
-    cart = cart.split(",");
-
-    for(let i = 0; i < cart.length; i++){
-      if(correctCart[i] != cart[i]){ expectedValue = false; }
-    }
+    if(correctCart != cart){ expectedValue = false; }
 
     expect(expectedValue).toBe(true);
   });
