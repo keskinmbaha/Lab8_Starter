@@ -29,7 +29,6 @@ describe('Basic user flow for Website', () => {
     const prodItems = await page.$$('product-item');
 
     for(let i = 0; i < prodItems.length; i++){
-      console.log(`Checking product item ${i}/${prodItems.length}`);
       // Grab the .data property of <product-items> to grab all of the json data stored inside
       data = await prodItems[i].getProperty('data');
       // Convert that property to JSON
@@ -61,7 +60,6 @@ describe('Basic user flow for Website', () => {
     // Query select all of the <product-item> elements
     const prodItems = await page.$$('product-item');
 
-    console.log(`Checking product item 0/${prodItems.length}`);
     // Grab the .data property of <product-items> to grab all of the json data stored inside
     shadowRoot = await prodItems[0].getProperty('shadowRoot');
     // Grab the button from the shadowRoot
@@ -94,7 +92,6 @@ describe('Basic user flow for Website', () => {
     const prodItems = await page.$$('product-item');
 
     for(let i = 1; i < prodItems.length; i++){
-      console.log(`Checking product item ${i+1}/${prodItems.length}`);
       // Grab the .data property of <product-items> to grab all of the json data stored inside
       shadowRoot = await prodItems[i].getProperty('shadowRoot');
       // Grab the button from the shadowRoot
@@ -133,7 +130,6 @@ describe('Basic user flow for Website', () => {
     const prodItems = await page.$$('product-item');
 
     for(let i = 0; i < prodItems.length; i++){
-      console.log(`Checking product item ${i+1}/${prodItems.length}`);
       // Grab the .data property of <product-items> to grab all of the json data stored inside
       shadowRoot = await prodItems[i].getProperty('shadowRoot');
       // Grab the button from the shadowRoot
@@ -171,7 +167,6 @@ describe('Basic user flow for Website', () => {
     let cart = localStorage['cart'];
     cart = cart.substring(1, cart.length-1);
     cart = cart.split(",");
-    console.log(cart);
 
     for(let i = 0; i < cart.length; i++){
       if(correctCart[i] != cart[i]){ expectedValue = false; }
@@ -194,7 +189,6 @@ describe('Basic user flow for Website', () => {
     const prodItems = await page.$$('product-item');
 
     for(let i = 0; i < prodItems.length; i++){
-      console.log(`Checking product item ${i+1}/${prodItems.length}`);
       // Grab the .data property of <product-items> to grab all of the json data stored inside
       shadowRoot = await prodItems[i].getProperty('shadowRoot');
       // Grab the button from the shadowRoot
@@ -234,7 +228,6 @@ describe('Basic user flow for Website', () => {
     const prodItems = await page.$$('product-item');
 
     for(let i = 0; i < prodItems.length; i++){
-      console.log(`Checking product item ${i+1}/${prodItems.length}`);
       // Grab the .data property of <product-items> to grab all of the json data stored inside
       shadowRoot = await prodItems[i].getProperty('shadowRoot');
       // Grab the button from the shadowRoot
