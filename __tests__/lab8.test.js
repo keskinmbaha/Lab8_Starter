@@ -68,9 +68,8 @@ describe('Basic user flow for Website', () => {
     await button.click();
     // Grab innerText
     let innerText = await button.getProperty('innerText');
-    innerText = await innerText['_remoteObject'].value;
     // checks to see if text changed inside the button
-    if (innerText != "Remove from Cart") { expectedValue = false; }
+    if (innerText['_remoteObject'].value != "Remove from Cart") { expectedValue = false; }
 
     // Expect expectedValue to still be true
     expect(expectedValue).toBe(true);
@@ -104,9 +103,8 @@ describe('Basic user flow for Website', () => {
     let cartCount = await page.$('#cart-count');
     // Grab innerText
     let innerText = await cartCount.getProperty('innerText');
-    innerText = await innerText['_remoteObject'].value;
     // checks to see if text changed inside the button
-    if (innerText != "20") { expectedValue = false; }
+    if (innerText['_remoteObject'].value != "20") { expectedValue = false; }
 
     expect(expectedValue).toBe(true);
   }, 10000);
@@ -136,18 +134,16 @@ describe('Basic user flow for Website', () => {
       let button = await shadowRoot.$('button');
       // grab innerText of the button
       let innerText = await button.getProperty('innerText');
-      innerText = await innerText['_remoteObject'].value;
       // checks to see if text changed inside the button
-      if (innerText != "Remove from Cart") { expectedValue = false; }
+      if (innerText['_remoteObject'].value != "Remove from Cart") { expectedValue = false; }
     }
 
     // Grab cartCount
     let cartCount = await page.$('#cart-count');
     // Grab innerText
     let innerText = await cartCount.getProperty('innerText');
-    innerText = await innerText['_remoteObject'].value;
     // checks to see if text changed inside the button
-    if (innerText != "20") { expectedValue = false; }
+    if (innerText['_remoteObject'].value != "20") { expectedValue = false; }
 
     expect(expectedValue).toBe(true);
   }, 10000);
@@ -201,9 +197,8 @@ describe('Basic user flow for Website', () => {
     let cartCount = await page.$('#cart-count');
     // Grab innerText
     let innerText = await cartCount.getProperty('innerText');
-    innerText = await innerText['_remoteObject'].value;
     // checks to see if text changed inside the button
-    if (innerText != "0") { expectedValue = false; }
+    if (innerText['_remoteObject'].value != "0") { expectedValue = false; }
 
     expect(expectedValue).toBe(true);
   }, 10000);
@@ -234,18 +229,16 @@ describe('Basic user flow for Website', () => {
       let button = await shadowRoot.$('button');
       // grab innerText of the button
       let innerText = await button.getProperty('innerText');
-      innerText = await innerText['_remoteObject'].value;
       // checks to see if text changed inside the button
-      if (innerText != "Add to Cart") { expectedValue = false; }
+      if (innerText['_remoteObject'].value != "Add to Cart") { expectedValue = false; }
     }
 
     // Grab cartCount
     let cartCount = await page.$('#cart-count');
     // Grab innerText
     let innerText = await cartCount.getProperty('innerText');
-    innerText = await innerText['_remoteObject'].value;
     // checks to see if text changed inside the button
-    if (innerText != "0") { expectedValue = false; }
+    if (innerText['_remoteObject'].value != "0") { expectedValue = false; }
 
     expect(expectedValue).toBe(true);
   }, 10000);
